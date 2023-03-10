@@ -14,5 +14,8 @@ public class PlayerController : Movement
         base.Update();
         MovementVector = new Vector2(Input.GetAxisRaw("Horizontal"), Input.GetAxisRaw("Vertical"));
         if(MovementVector != Vector2.zero) SetFacing(MovementVector.x * Vector2.right);
+
+        Animator.SetInteger("MoveX", (int)MovementVector.x);
+        Animator.SetInteger("MoveY", (int)MovementVector.y);
     }
 }

@@ -4,6 +4,7 @@ public class Movement : MonoBehaviour
 {
     [SerializeField] private float movementSpeed;
     [SerializeField] private Entity entity;
+    [SerializeField] protected Animator Animator;
     protected Vector2 MovementVector;
     protected Rigidbody2D rb;
     protected virtual void Start()
