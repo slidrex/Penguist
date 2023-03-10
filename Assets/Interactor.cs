@@ -7,6 +7,12 @@ public class Interactor : MonoBehaviour
     [SerializeField] private float interactDistance;
     [SerializeField] private InteractHint hint;
     private InteractableObject interact;
+    [HideInInspector] public Inventory Inventory;
+    [SerializeField] private Entity entity;
+    private void Awake()
+    {
+        Inventory = GetComponent<InventoryHolder>().Inventory;
+    }
     private void Update()
     {
         HandleInteractableObjects();
@@ -71,7 +77,7 @@ public class Interactor : MonoBehaviour
     }
     private void InteractInput()
     {
-        if(Input.GetKeyDown(KeyCode.E) && interact != null)
+        if(Input.GetKeyDown(KeyCode.E) && interact != null && entity.ContainsRule(Entity.Rule.DisableInteraction) == false)
         {
             interact.OnInteract();
         }

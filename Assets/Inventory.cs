@@ -26,6 +26,36 @@ public class Inventory : MonoBehaviour
         slots[newSlot].Select(true);
         selectedSlot = newSlot;
     }
+    public void Remove(Item item)
+    {
+        for(int i = 0; i < Items.Length; i++)
+        {
+            if(Items[i].Name == item.Name)
+            {
+                Items[i] = null;
+                return;
+            }
+        }
+    }
+    public bool IsFull()
+    {
+        foreach(Item item in Items)
+        {
+            if(item == null) return false;
+        }
+        return true;
+    }
+    public void Remove(string name)
+    {
+        for(int i = 0; i < Items.Length; i++)
+        {
+            if(Items[i].Name == name)
+            {
+                Items[i] = null;
+                return;
+            }
+        }
+    }
     private void SelectIndex(int index)
     {
         int newSlot = index;
@@ -44,6 +74,22 @@ public class Inventory : MonoBehaviour
         {
             DropItem(selectedSlot);
         }
+    }
+    public bool ContainsItem(string name)
+    {
+        foreach(Item curItem in Items)
+        {
+            if(curItem.Name == name) return true;
+        }
+        return false;
+    }
+    public bool ContainsItem(Item item)
+    {
+        foreach(Item curItem in Items)
+        {
+            if(curItem.Name == item.Name) return true;
+        }
+        return false;
     }
     private void InitSlots()
     {

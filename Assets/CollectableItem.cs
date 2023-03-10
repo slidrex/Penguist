@@ -26,7 +26,7 @@ public class CollectableItem : InteractableObject
     }
     public override void OnInteract()
     {
-        bool success = Interactor.GetComponent<InventoryHolder>().Inventory.AddItem(Item);
+        bool success = Interactor.Inventory.AddItem(Item);
         if(success) Destroy(gameObject);
     }
     private void Update()
