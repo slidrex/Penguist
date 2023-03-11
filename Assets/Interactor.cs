@@ -11,9 +11,11 @@ public class Interactor : MonoBehaviour
     [HideInInspector] public Inventory Inventory;
     private bool interactKeyPressedDown;
     public Entity entity;
+    private Movement movement;
     private void Awake()
     {
         Inventory = GetComponent<InventoryHolder>().Inventory;
+        movement = GetComponent<Movement>();
     }
     private void Update()
     {
@@ -100,7 +102,7 @@ public class Interactor : MonoBehaviour
         {
             interactKeyPressedDown = true;
             float facing = interact.transform.position.x - transform.position.x;
-            entity.Movement.SetFacing(Mathf.Sign(facing) * Vector2.right);
+            movement.SetFacing(Mathf.Sign(facing) * Vector2.right);
             interact.OnInteractKeyDown();
         }
         

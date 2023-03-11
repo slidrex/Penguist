@@ -29,11 +29,16 @@ public class Bullet : MonoBehaviour
         if(breakParticles != null)
             Destroy(Instantiate(breakParticles, transform.position, Quaternion.identity), 5.0f);
     }
-    private void OnTriggerEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.TryGetComponent<Entity>(out Entity entt))
         {
             entt.Damage();
+            Destroy(gameObject);
+        }
+        else if(collision.gameObject.TryGetComponent<UnfrozenObject>(out UnfrozenObject obj))
+        {
+            obj.OnDamage();
             Destroy(gameObject);
         }
     }

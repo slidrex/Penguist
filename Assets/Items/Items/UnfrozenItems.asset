@@ -1,0 +1,20 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6baf5722c4c4c8749b2529594e25714d, type: 3}
+  m_Name: UnfrozenItems
+  m_EditorClassIdentifier: 
+  Items:
+  - {fileID: 11400000, guid: 5f4713b3582d0ec42a18642069fb8e8f, type: 2}
+  - {fileID: 11400000, guid: 874b8274704f25b41bb87d2fab9cea48, type: 2}
+  - {fileID: 11400000, guid: 0406919c3f644104b9de89ea68765e95, type: 2}
+  - {fileID: 11400000, guid: 5d27d02639c162246aa410442aefc3a5, type: 2}
+  - {fileID: 11400000, guid: 60856fd713338b24d84c22718ba7d9ab, type: 2}

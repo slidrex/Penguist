@@ -3,8 +3,8 @@ using UnityEngine;
 public class MapGenerator : MonoBehaviour
 {
     [SerializeField] private FrozenObject objectTemplate;
-    public ushort NPCCount;
-    private int spawnedNPC;
+    public ushort ObjectCount;
+    private int spawnedObjects;
     [SerializeField] private Transform spawnPointsContainer;
     [SerializeField] private PackFrozenObject[] NeccessaryObjects;
     [System.Serializable]
@@ -16,13 +16,12 @@ public class MapGenerator : MonoBehaviour
     private void Start()
     {
         GenerateMap();
-        int inheritEntity;
-        string optional = "non const npcs, multiple objects, on hotbar item display name, collider layer";
+        string optional = "non const npcs, multiple objects, on hotbar item display name";
         //Frozen Revolver, Trader NPC, Bottles Craft
     }
     private void GenerateMap()
     {
-        for(int i = spawnedNPC; i < NPCCount; i++)
+        for(int i = spawnedObjects; i < ObjectCount; i++)
         {
             int maxChildren = spawnPointsContainer.childCount;
             int randomPlace = Random.Range(0, maxChildren);

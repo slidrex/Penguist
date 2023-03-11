@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class InteractableObject : MonoBehaviour
+public abstract class InteractableObject : UnfrozenObject
 {
     [HideInInspector] public Collider2D Collider;
     public abstract string InteractString { get; }

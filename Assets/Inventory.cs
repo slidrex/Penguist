@@ -34,7 +34,7 @@ public class Inventory : MonoBehaviour
     {
         for(int i = 0; i < Items.Length; i++)
         {
-            if(Items[i].Name == item.Name)
+            if(Items[i] != null && Items[i].Name == item.Name)
             {
                 Items[i] = null;
                 OnInventoryChanged?.Invoke();

@@ -2,19 +2,18 @@ using UnityEngine;
 
 public class CollectableItem : InteractableObject
 {
-    private SpriteRenderer _renderer;
     [HideInInspector] public Rigidbody2D Rigidbody;
     private float blockTime;
     private float timeSinceBlock;
     private Item Item;
     private BlockTimer blockTimer;
-
+    [SerializeField] private Item itemDatabase;
     public override string InteractString => "Collect";
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         Collider = GetComponent<Collider2D>();
         Rigidbody = GetComponent<Rigidbody2D>();
-        _renderer = GetComponent<SpriteRenderer>();
     }
     public void Block(float blockTime, Collider2D collider)
     {
@@ -46,7 +45,7 @@ public class CollectableItem : InteractableObject
     public void AttachItem(Item item)
     {
         Item = item;
-        _renderer.sprite = item.Sprite;
+        Renderer.sprite = item.Sprite;
     }
     private class BlockTimer
     {

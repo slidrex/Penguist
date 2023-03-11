@@ -1,16 +1,12 @@
 using UnityEngine;
 
-public class UnfrozenObject : MonoBehaviour
+public abstract class UnfrozenObject : MonoBehaviour
 {
-    public enum IceSize
-    {
-        Big,
-        Small
-    }
-    public IceSize Size;
     public SpriteRenderer Renderer;
-    public virtual void OnUnfreeze()
+    protected virtual void Awake()
     {
-        
+        Renderer = GetComponent<SpriteRenderer>();
     }
+    public virtual void OnUnfreeze() {}
+    public virtual void OnDamage() {}
 }

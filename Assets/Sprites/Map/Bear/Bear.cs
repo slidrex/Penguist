@@ -1,7 +1,7 @@
 using UnityEngine;
 using Pathfinding;
 
-public class Bear : MonoBehaviour
+public class Bear : UnfrozenObject
 {
     [SerializeField] private Transform target;
     [SerializeField] private float speed;
