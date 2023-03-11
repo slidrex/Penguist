@@ -2,6 +2,7 @@ using UnityEngine;
 
 public abstract class InteractableObject : MonoBehaviour
 {
+    [HideInInspector] public Collider2D Collider;
     public abstract string InteractString { get; }
     private bool interactEnded;
     [HideInInspector] public Interactor Interactor;
@@ -9,21 +10,30 @@ public abstract class InteractableObject : MonoBehaviour
     {
         Interactor = interactor;
         interactEnded = false;
-        return OnInteractRequest();
+        bool success = IsInteractable(interactor);
+        return success;
     }
     public void InteractEnd()
     {
-        if(interactEnded) return;
-        OnInteractEnd();
-        interactEnded = true;
-        Interactor = null;
+        if(interactEnded == false)
+        {
+            OnInteractEnd();
+            interactEnded = true;
+        }
     }
-    protected virtual void OnInteractEnd() {}
-    protected virtual bool OnInteractRequest()
+    public void OnInteractorOutOfRange() {}
+    protected virtual void OnInteractEnd() { }
+    public virtual void OnInteractorInRange(Interactor interactor) {}
+    public virtual bool IsInteractable(Interactor potentialInteractor)
     {
         return true;
     }
-    public virtual void OnInteract()
+    public virtual void OnInteractKeyDown()
+    {
+        
+    }
+    protected virtual void Update() {}
+    public virtual void OnInteractKeyUp()
     {
 
     }

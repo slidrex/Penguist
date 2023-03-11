@@ -4,7 +4,7 @@ using UnityEngine.UI;
 public class Inventory : MonoBehaviour
 {
     [SerializeField] private Item[] Items;
-    [SerializeField] private Transform holder;
+    [SerializeField] private Entity holder;
     private Collider2D Collider;
     private InventorySlot[] slots;
     private System.Action OnInventoryChanged;
@@ -15,7 +15,11 @@ public class Inventory : MonoBehaviour
         InitSlots();
         Collider = holder.GetComponent<Collider2D>();
         OnInventoryChanged += RenderSlots;
-        for(int i = 0; i < Items.Length; i++) if(Items[i] != null) Items[i] = Instantiate(Items[i]);
+        for(int i = 0; i < Items.Length; i++) if(Items[i] != null) 
+        {
+            Items[i] = Instantiate(Items[i]);
+            Items[i].OnAttach(holder);
+        }
         RenderSlots();
         SelectIndex(0);
     }
@@ -33,6 +37,7 @@ public class Inventory : MonoBehaviour
             if(Items[i].Name == item.Name)
             {
                 Items[i] = null;
+                OnInventoryChanged?.Invoke();
                 return;
             }
         }
@@ -52,6 +57,7 @@ public class Inventory : MonoBehaviour
             if(Items[i].Name == name)
             {
                 Items[i] = null;
+                OnInventoryChanged?.Invoke();
                 return;
             }
         }
@@ -74,20 +80,25 @@ public class Inventory : MonoBehaviour
         {
             DropItem(selectedSlot);
         }
+        if(Input.GetKeyDown(KeyCode.Mouse1) && Items[selectedSlot] != null)
+        {
+            Items[selectedSlot].OnItemSecondaryUse(holder);
+        }
     }
     public bool ContainsItem(string name)
     {
         foreach(Item curItem in Items)
         {
-            if(curItem.Name == name) return true;
+            if(curItem != null && curItem.Name == name) return true;
         }
+        print("False");
         return false;
     }
     public bool ContainsItem(Item item)
     {
         foreach(Item curItem in Items)
         {
-            if(curItem.Name == item.Name) return true;
+            if(curItem?.Name == item.Name) return true;
         }
         return false;
     }
@@ -107,6 +118,7 @@ public class Inventory : MonoBehaviour
             if(Items[i] == null) 
             {
                 Items[i] = Instantiate(item);
+                Items[i].OnAttach(holder);
                 OnInventoryChanged.Invoke();
                 return true;
             }
@@ -115,10 +127,16 @@ public class Inventory : MonoBehaviour
     }
     public void DropItem(int index)
     {
+        
         if(Items[index] != null) 
         {
-            CollectableItem item = Instantiate(collectableItem, holder.position, Quaternion.identity);
-            item.AttachItem(Instantiate(Items[index]));
+            if(Items[index].DestroyOnDrop == false)
+            {
+                CollectableItem item = Instantiate(collectableItem, holder.transform.position, Quaternion.identity);
+                item.AttachItem(Instantiate(Items[index]));
+            }
+            else if(Items[index].DestroyEffect != null) Destroy(Instantiate(Items[index].DestroyEffect, holder.transform.position, Quaternion.identity), 5.0f);
+            Items[index].OnDrop();
             Items[index] = null;
             OnInventoryChanged.Invoke();
         }

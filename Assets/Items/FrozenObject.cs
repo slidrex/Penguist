@@ -1,40 +1,39 @@
 using UnityEngine;
 
-public abstract class FrozenObject : InteractableObject
+public class FrozenObject : InteractableObject
 {
-    private enum FreezeType
-    {
-        Full,
-        Partial
-    }
+    [SerializeField] private Color32 partialFreezeColor = Color.white;
+    [SerializeField] private Color32 fullFreezeColor = Color.white;
     [SerializeField] private SpriteRenderer freezedObject;
+    private SpriteRenderer iceRenderer;
     public override string InteractString => "Разморозить";
-    [SerializeField] private FreezeType freezeType;
+    [SerializeField] private GameObject unfreezeParticles;
     private const string antiFreezeName = "Антифриз";
-    protected abstract Sprite RenderedObject { get; }
     protected virtual bool AutoRemove  { get; } = true;
-    protected virtual void Start()
+    private UnfrozenObject insideObject;
+    public void RenderFrozenObject(Sprite frozenObjectSprite, UnfrozenObject insideObject, bool partialPacked)
     {
-        RenderFrozenObject();
+        iceRenderer = GetComponent<SpriteRenderer>();
+        freezedObject.gameObject.SetActive(partialPacked);
+        iceRenderer.color = partialPacked ? partialFreezeColor : fullFreezeColor;
+        freezedObject.sprite = frozenObjectSprite;
+        this.insideObject = insideObject;
     }
-    private void RenderFrozenObject()
+    public override bool IsInteractable(Interactor interactor)
     {
-        freezedObject.gameObject.SetActive(freezeType == FreezeType.Partial);
-        freezedObject.sprite = RenderedObject;
+        return interactor.Inventory.ContainsItem(antiFreezeName);
     }
-    protected override bool OnInteractRequest()
-    {
-        return Interactor.Inventory.ContainsItem(antiFreezeName);
-    }
-    public override void OnInteract()
+    public override void OnInteractKeyDown()
     {
         Interactor.Inventory.Remove(antiFreezeName);
         OnUnfreeze();
+        if(unfreezeParticles != null) Destroy(Instantiate(unfreezeParticles.gameObject, transform.position, Quaternion.identity), 5.0f);
         if(AutoRemove) RemoveFrozenObject();
     }
     protected virtual void OnUnfreeze()
     {
-
+        var unfrozen = Instantiate(insideObject, transform.position, Quaternion.identity);
+        unfrozen.OnUnfreeze();
     }
     protected void RemoveFrozenObject(float time = 0.0f) => Destroy(gameObject, time);
 }

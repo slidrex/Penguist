@@ -8,7 +8,6 @@ public class CollectableItem : InteractableObject
     private float timeSinceBlock;
     private Item Item;
     private BlockTimer blockTimer;
-    private Collider2D Collider;
 
     public override string InteractString => "Collect";
     private void Awake()
@@ -24,13 +23,14 @@ public class CollectableItem : InteractableObject
         Physics2D.IgnoreCollision(collider, Collider);
         blockTimer.RemainTime = blockTime;
     }
-    public override void OnInteract()
+    public override void OnInteractKeyDown()
     {
         bool success = Interactor.Inventory.AddItem(Item);
         if(success) Destroy(gameObject);
     }
-    private void Update()
+    protected override void Update()
     {
+        base.Update();
         if(blockTimer != null)
         {
             if(blockTimer.RemainTime > 0) blockTimer.RemainTime -= Time.deltaTime;
