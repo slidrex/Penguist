@@ -1,37 +1,31 @@
 fileFormatVersion: 2
-guid: a34dfad205b43564a956f3351de4320c
+guid: eff4e61b0653d2548af9da8cc2d0c560
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6334210803768031246
-    second: MapSheet_0
+      213: 7240679107752225424
+    second: water_falling_0
   - first:
-      213: -5146113415515357925
-    second: MapSheet_1
+      213: 5499951736829896374
+    second: water_falling_1
   - first:
-      213: 7263929814679343172
-    second: MapSheet_2
+      213: 1546152118357015633
+    second: water_falling_2
   - first:
-      213: 4202751348506578191
-    second: MapSheet_3
+      213: -6610622402433765800
+    second: water_falling_3
   - first:
-      213: 4416684730200109273
-    second: MapSheet_4
+      213: -8031215480511161779
+    second: water_falling_4
   - first:
-      213: -8804805724607851422
-    second: MapSheet_5
+      213: 7053890450008454084
+    second: water_falling_5
   - first:
-      213: -5321059670695170061
-    second: MapSheet_6
+      213: 7927619060626927278
+    second: water_falling_6
   - first:
-      213: -6436680852128504984
-    second: MapSheet_7
-  - first:
-      213: -7266873046686880389
-    second: MapSheet_8
-  - first:
-      213: -5440221057385276546
-    second: MapSheet_9
+      213: -3360595512161454880
+    second: water_falling_7
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -76,7 +70,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 16
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -95,7 +89,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 256
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -107,7 +101,7 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 256
+    maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -121,13 +115,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: MapSheet_0
+      name: water_falling_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 240
-        width: 16
-        height: 16
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,20 +129,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e08f80b7a23a7e750800000000000000
-      internalID: 6334210803768031246
+      spriteID: 09ae926294f0c7460800000000000000
+      internalID: 7240679107752225424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MapSheet_1
+      name: water_falling_1
       rect:
         serializedVersion: 2
         x: 32
-        y: 240
-        width: 16
-        height: 16
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -156,20 +150,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b1db5562d155598b0800000000000000
-      internalID: -5146113415515357925
+      spriteID: 6b6e983f6f0c35c40800000000000000
+      internalID: 5499951736829896374
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MapSheet_2
+      name: water_falling_2
       rect:
         serializedVersion: 2
         x: 64
-        y: 240
-        width: 16
-        height: 16
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -177,20 +171,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 440d4553ea9aec460800000000000000
-      internalID: 7263929814679343172
+      spriteID: 15c3367e829057510800000000000000
+      internalID: 1546152118357015633
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MapSheet_3
+      name: water_falling_3
       rect:
         serializedVersion: 2
         x: 96
-        y: 240
-        width: 16
-        height: 16
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -198,20 +192,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f0d4707951c235a30800000000000000
-      internalID: 4202751348506578191
+      spriteID: 85e22b613f95244a0800000000000000
+      internalID: -6610622402433765800
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MapSheet_4
+      name: water_falling_4
       rect:
         serializedVersion: 2
         x: 128
-        y: 240
-        width: 16
-        height: 16
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -219,20 +213,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9d0387c8c573b4d30800000000000000
-      internalID: 4416684730200109273
+      spriteID: d4a938952146b8090800000000000000
+      internalID: -8031215480511161779
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MapSheet_5
+      name: water_falling_5
       rect:
         serializedVersion: 2
         x: 160
-        y: 240
-        width: 16
-        height: 16
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,20 +234,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2645c64e7db0fc580800000000000000
-      internalID: -8804805724607851422
+      spriteID: 4c3364dbdf374e160800000000000000
+      internalID: 7053890450008454084
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MapSheet_6
+      name: water_falling_6
       rect:
         serializedVersion: 2
         x: 192
-        y: 240
-        width: 16
-        height: 16
+        y: 0
+        width: 32
+        height: 32
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -261,71 +255,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 3ffae83fb6cc726b0800000000000000
-      internalID: -5321059670695170061
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MapSheet_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 240
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 86362543ed05ca6a0800000000000000
-      internalID: -6436680852128504984
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MapSheet_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 208
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b7d2e503771e62b90800000000000000
-      internalID: -7266873046686880389
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: MapSheet_9
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 208
-        width: 16
-        height: 16
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e7b53f695c37084b0800000000000000
-      internalID: -5440221057385276546
+      spriteID: eaea847888f840e60800000000000000
+      internalID: 7927619060626927278
       vertices: []
       indices: 
       edges: []
