@@ -4,6 +4,7 @@ public class Bird : UnfrozenObject
 {
     private Transform target;
     [SerializeField] private float speed;
+    [SerializeField] private GameObject dieEffect;
     private Rigidbody2D rb;
 
     private void Start()
@@ -26,6 +27,10 @@ public class Bird : UnfrozenObject
         {
             print("Collision");
         }
+    }   
+    public override void OnDamage()
+    {
+        GameObject obj = Instantiate(dieEffect, transform.position, Quaternion.identity, transform);
+        Destroy(obj, 2);
     }
-        
 }

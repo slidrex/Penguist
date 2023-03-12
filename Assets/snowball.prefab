@@ -100,7 +100,7 @@ MonoBehaviour:
   MoveDirection: {x: 0, y: 0}
   BulletSpeed: 2
   lifeTime: 5
-  breakParticles: {fileID: 0}
+  breakParticles: {fileID: 1613917862929037765, guid: 7a08059559e2b674c8b1a4e0f660b4a7, type: 3}
 --- !u!50 &1651919585654837941
 Rigidbody2D:
   serializedVersion: 4

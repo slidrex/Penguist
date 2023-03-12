@@ -1,0 +1,127 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &6363496645072237091
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 5632428380161919972, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161919972, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: ShapeModule.m_Scale.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161919972, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: ShapeModule.m_Scale.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161919972, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: VelocityModule.y.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161919972, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: VelocityModule.y.minScalar
+      value: 0.5926
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161919972, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161919972, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161919972, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161919972, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: ShapeModule.randomDirectionAmount
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161919972, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: VelocityModule.y.maxCurve.m_Curve.Array.data[1].time
+      value: 0.065362126
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161919972, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: VelocityModule.y.minCurve.m_Curve.Array.data[1].time
+      value: 0.051946282
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161919972, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: VelocityModule.y.maxCurve.m_Curve.Array.data[0].value
+      value: 0.4320984
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161919972, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: VelocityModule.y.maxCurve.m_Curve.Array.data[1].value
+      value: 0.5923455
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161919972, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: VelocityModule.y.minCurve.m_Curve.Array.data[0].value
+      value: 0.59259033
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161919972, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: VelocityModule.y.minCurve.m_Curve.Array.data[1].value
+      value: 0.78046787
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161919972, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: VelocityModule.y.minCurve.m_Curve.Array.data[2].value
+      value: 0.049388885
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161919972, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161919974, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: m_Name
+      value: BulletColEffect
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161920027, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161920027, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.36
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161920027, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.83
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161920027, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161920027, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161920027, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161920027, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161920027, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161920027, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161920027, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5632428380161920027, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}

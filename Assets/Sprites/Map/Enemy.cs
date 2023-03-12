@@ -4,6 +4,7 @@ using Pathfinding;
 public class Enemy : UnfrozenObject
 {
     private Transform target;
+    [SerializeField] private GameObject dieEffect;
     [SerializeField] private float speed;
     [SerializeField] private float nextWaypointDistance;
     private Path path;
@@ -62,12 +63,19 @@ public class Enemy : UnfrozenObject
         if(seeker.IsDone())
             seeker.StartPath(transform.position, target.position, OnPathComplete);
     }
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collision.gameObject.GetComponent<PlayerController>() != null)
+        if(collider.GetComponent<PlayerController>() != null)
         {
             print("Collision");
         }
+    }
+    public override void OnDamage()
+    {
+        GameObject obj = Instantiate(dieEffect, transform.position, Quaternion.identity);
+        gameObject.SetActive(false);
+        Destroy(obj, 2);
+        Destroy(gameObject, 2);
     }
     private void OnDrawGizmos()
     {
