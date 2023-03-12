@@ -133,7 +133,7 @@ MonoBehaviour:
       Count: 3
     - Hook: 5
       QuestDescription: "\u0412\u044B\u0438\u0433\u0440\u0430\u0442\u044C \u043E\u0431\u043C\u0430\u043D\u0449\u0438\u043A\u0430"
-      Count: 2
+      Count: 5
     - Hook: 1
       QuestDescription: "\u0420\u0430\u0437\u043C\u043E\u0440\u043E\u0437\u0438\u0442\u044C
         \u043E\u0431\u044A\u0435\u043A\u0442\u044B"
