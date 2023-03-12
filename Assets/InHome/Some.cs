@@ -11,6 +11,7 @@ public class Some : MonoBehaviour
 
     private void Start()
     {
+        ice.SetActive(true);
         player = FindObjectOfType<Player>();
         player.AddRule(Entity.Rule.DisableMovement);
         cam = FindObjectOfType<CinemachineBasicMultiChannelPerlin>();

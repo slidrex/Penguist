@@ -1,5 +1,5 @@
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
 public class TimeMachine : HoldingInteractableObject
 {
     [SerializeField] private Item pulsator;
@@ -20,5 +20,6 @@ public class TimeMachine : HoldingInteractableObject
         Interactor.Inventory.Remove(pulsator);
         Interactor.Inventory.Remove(button);
         Interactor.Inventory.Remove(battery);
+        SceneManager.LoadScene(4);
     }
 }

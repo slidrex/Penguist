@@ -31,6 +31,6 @@ public class Begin : MonoBehaviour
         yield return new WaitForSeconds(10.5f);
         Instantiate(frost, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(2);
-        SceneManager.LoadScene(1);
+        SceneManager.LoadScene(2);
     }
 }

@@ -5,9 +5,9 @@ public class CollectableItem : InteractableObject
     [HideInInspector] public Rigidbody2D Rigidbody;
     private float blockTime;
     private float timeSinceBlock;
-    private Item Item;
+    protected Item Item;
     private BlockTimer blockTimer;
-    [SerializeField] private ItemDatabase itemDatabase;
+    [SerializeField] protected ItemDatabase itemDatabase;
     public override string InteractString => "Подобрать";
     protected override void Awake()
     {
