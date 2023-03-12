@@ -155,4 +155,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Renderer: {fileID: 3822795145312727188}
-  speed: 0.5
+  speed: 1
+  dieEffect: {fileID: 5632428380161919974, guid: 1c70e2374400ae043819b5b44e5154db, type: 3}

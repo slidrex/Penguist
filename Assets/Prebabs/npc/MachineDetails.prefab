@@ -72,8 +72,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 8041037751590388503, guid: a252f6fe9234f77408e8e34d34693703, type: 3}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: e022138d4df61ee458b0dabdbf195961, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,7 +101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8, y: 0.8}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.8, y: 0.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -135,15 +135,15 @@ MonoBehaviour:
     - Hook: 3
       QuestDescription: "\u041C\u043E\u043D\u0435\u0442\u044B"
       Count: 2
-    - Hook: 5
-      QuestDescription: "\u0412\u044B\u0438\u0433\u0440\u0430\u0442\u044C \u043E\u0431\u043C\u0430\u043D\u0449\u0438\u043A\u0430"
-      Count: 4
+    - Hook: 4
+      QuestDescription: "\u041F\u0440\u043E\u0438\u0433\u0440\u0430\u0442\u044C \u043E\u0431\u043C\u0430\u043D\u0449\u0438\u043A\u0443"
+      Count: 2
   - RewardItem: {fileID: 11400000, guid: 5f4713b3582d0ec42a18642069fb8e8f, type: 2}
     Quests:
     - Hook: 1
       QuestDescription: "\u0420\u0430\u0437\u043C\u043E\u0440\u043E\u0437\u0438\u0442\u044C
         \u043E\u0431\u044A\u0435\u043A\u0442\u044B"
-      Count: 10
+      Count: 8
     - Hook: 2
       QuestDescription: "\u0420\u0435\u0432\u043E\u043B\u044C\u0432\u0435\u0440"
       Count: 1

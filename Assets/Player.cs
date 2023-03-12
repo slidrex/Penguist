@@ -14,6 +14,7 @@ public class Player : Entity, ICanvasHolder, IHintHolder, IQuestUIHolder
     {
         statistics = GetComponent<EntityStatistics>();
         inventory = GetComponent<InventoryHolder>().Inventory;
+        database.Reset();
         if(inventory != null)
             inventory.OnInventoryChanged += UpdateStats;
     }

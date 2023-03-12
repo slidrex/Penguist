@@ -2,6 +2,8 @@ using UnityEngine;
 using Cinemachine;
 using System.Collections;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 public class Begin : MonoBehaviour
 {
     [SerializeField] private GameObject frost;
@@ -29,6 +31,6 @@ public class Begin : MonoBehaviour
         yield return new WaitForSeconds(10.5f);
         Instantiate(frost, transform.position, Quaternion.identity);
         yield return new WaitForSeconds(2);
-        // next scene
+        SceneManager.LoadScene(1);
     }
 }

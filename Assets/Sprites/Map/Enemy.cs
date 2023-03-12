@@ -22,7 +22,6 @@ public class Enemy : UnfrozenObject
     private void FixedUpdate()
     {
         Path();
-        Movement();
     }
     private void Path()
     {
@@ -36,9 +35,11 @@ public class Enemy : UnfrozenObject
         {
             currentWaypoint++;
         }
+        Movement();
     }
     private void Movement()
     {
+        if(path.vectorPath.Count <= currentWaypoint) return;
         Vector2 direction = path.vectorPath[currentWaypoint] - transform.position;
         rb.velocity = direction.normalized * speed;
         Turn(direction);

@@ -100,7 +100,7 @@ MonoBehaviour:
   Collider: {fileID: 0}
   Interactor: {fileID: 0}
   indicator: {fileID: 6700814092373592487, guid: c40d445f428da8a459c564ff99596c3c, type: 3}
-  MaxInteractTime: 5
+  MaxInteractTime: 0.8
   snow: {fileID: 11400000, guid: 8fbd3febe2468bb42916a518840ce5a9, type: 2}
   MaxInteractCount: 0
 --- !u!58 &5218231725837512992

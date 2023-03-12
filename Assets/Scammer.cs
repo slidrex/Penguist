@@ -2,11 +2,11 @@ using UnityEngine;
 
 public class Scammer : InteractableObject
 {
-    [SerializeField] private Bird bird;
+    [SerializeField] private Enemy bird;
     [SerializeField] private Item coin;
     public override string InteractString => "Взаимодействовать";
     private bool requested;
-    private float interactInterval = 5.0f;
+    private float interactInterval = 1.0f;
     private float timeSinceInteract;
     protected override void Awake()
     {
@@ -35,8 +35,7 @@ public class Scammer : InteractableObject
             else 
             {
                 (Interactor.entity as IHintHolder).Hint.CreateHint("Не повезло! Не повезло!");
-                //Interactor.transform -  игрок
-                //bir - птица
+                Enemy brd = Instantiate(bird, (Vector2)Interactor.entity.transform.position + 5 * RandVector(), Quaternion.identity);
                 Interactor.GetComponent<EntityStatistics>().AddStat(QuestNPC.QuestHook.LoseScammer, 1);
             }
             Interactor.Inventory.AddItem(coin);
@@ -52,5 +51,22 @@ public class Scammer : InteractableObject
     protected override void OnInteractEnd()
     {
         requested = false;
+    }
+    private Vector2 RandVector()
+    {
+        int rand = Random.Range(0, 4);
+        switch(rand)
+        {
+            case 0:
+                return Vector2.up;
+            case 1:
+                return Vector2.right;
+            case 2:
+                return Vector2.down;
+            case 3:
+                return Vector2.left;
+            default:
+                return Vector2.zero;
+        }
     }
 }

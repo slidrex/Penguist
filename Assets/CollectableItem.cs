@@ -11,14 +11,17 @@ public class CollectableItem : InteractableObject
     public override string InteractString => "Подобрать";
     protected override void Awake()
     {
+        base.Awake();
+        Collider = GetComponent<Collider2D>();
+        Rigidbody = GetComponent<Rigidbody2D>();
+    }
+    private void Start()
+    {
         if(Item == null) 
         {
             Item = itemDatabase.GetItem();
             Renderer.sprite = Item.Sprite;
         }
-        base.Awake();
-        Collider = GetComponent<Collider2D>();
-        Rigidbody = GetComponent<Rigidbody2D>();
     }
     public void Block(float blockTime, Collider2D collider)
     {

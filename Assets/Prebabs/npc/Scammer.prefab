@@ -72,8 +72,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
-  m_Sprite: {fileID: 8041037751590388503, guid: a252f6fe9234f77408e8e34d34693703, type: 3}
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 21300000, guid: c265c804a1f8eab459760c52abc4c71a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -101,7 +101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.8, y: 0.8}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 0.8, y: 0.8}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -125,5 +125,5 @@ MonoBehaviour:
   Renderer: {fileID: 3281652661195725778}
   Collider: {fileID: 0}
   Interactor: {fileID: 0}
-  bird: {fileID: 8264740990949223273, guid: 882bf22b1b797b94cb2b727747af911c, type: 3}
+  bird: {fileID: 3415647070383023063, guid: 5f52be4bc12ae1341a7cbc07c5cc4492, type: 3}
   coin: {fileID: 11400000, guid: 10dd5654cedde7c46b6edfd7834e8934, type: 2}
