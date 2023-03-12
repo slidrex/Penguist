@@ -11,8 +11,8 @@ public class Player : Entity, ICanvasHolder, IHintHolder, IQuestUIHolder
     private EntityStatistics statistics;
     private void Start()
     {
-        inventory = GetComponent<InventoryHolder>().Inventory;
         statistics = GetComponent<EntityStatistics>();
+        inventory = GetComponent<InventoryHolder>().Inventory;
         inventory.OnInventoryChanged += UpdateStats;
     }
     private void UpdateStats()

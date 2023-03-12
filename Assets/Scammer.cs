@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class Scammer : InteractableObject
 {
+    [SerializeField] private Bird bird;
     [SerializeField] private Item coin;
     public override string InteractString => "Взаимодействовать";
     private bool requested;
@@ -34,6 +35,8 @@ public class Scammer : InteractableObject
             else 
             {
                 (Interactor.entity as IHintHolder).Hint.CreateHint("Не повезло! Не повезло!");
+                //Interactor.transform -  игрок
+                //bir - птица
             }
             timeSinceInteract = 0.0f;
             Interactor.InterruptInteraction();
