@@ -16,8 +16,6 @@ public class MapGenerator : MonoBehaviour
     private void Start()
     {
         GenerateMap();
-        string optional = "on hotbar item display name, different npc phrases, random quest conditions";
-        //Frozen Revolver, Trader NPC, Bottles Craft
     }
     private void GenerateMap()
     {

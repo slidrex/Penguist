@@ -5,7 +5,11 @@ public class ItemDatabase : ScriptableObject
 {
     [SerializeField] private Item[] Items;
     private int offset;
-    private Item GetItem() 
+    public void Reset()
+    {
+        offset = 0;
+    }
+    public Item GetItem() 
     {
         Item item = Items[offset];
         offset++;

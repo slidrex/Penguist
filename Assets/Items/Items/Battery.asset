@@ -14,5 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   DestroyOnDrop: 0
   DestroyEffect: {fileID: 0}
-  Name: Battery
+  Name: "\u0411\u0430\u0442\u0430\u0440\u0435\u044F"
   Sprite: {fileID: 21300000, guid: afdab452fa95c0041b944837ea3f6563, type: 3}

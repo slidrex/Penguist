@@ -6,7 +6,7 @@ public class Scammer : InteractableObject
     [SerializeField] private Item coin;
     public override string InteractString => "Взаимодействовать";
     private bool requested;
-    private float interactInterval = 16.0f;
+    private float interactInterval = 5.0f;
     private float timeSinceInteract;
     protected override void Awake()
     {
@@ -17,7 +17,7 @@ public class Scammer : InteractableObject
     {
         if(timeSinceInteract < interactInterval)
         {
-            (Interactor.entity as IHintHolder).Hint.CreateHint("Я устал, приходи чуть позже!");
+            (Interactor.entity as IHintHolder).Hint.CreateHint("Да подожди ты!");
             return;
         }
         if(requested == false)
@@ -30,14 +30,16 @@ public class Scammer : InteractableObject
             if(Random.Range(0, 1f) <= 0.5f)
             {
                 (Interactor.entity as IHintHolder).Hint.CreateHint("Повезло повезло!");
-                Interactor.Inventory.AddItem(coin);
+                Interactor.GetComponent<EntityStatistics>().AddStat(QuestNPC.QuestHook.WinScammer, 1);
             }
             else 
             {
                 (Interactor.entity as IHintHolder).Hint.CreateHint("Не повезло! Не повезло!");
                 //Interactor.transform -  игрок
                 //bir - птица
+                Interactor.GetComponent<EntityStatistics>().AddStat(QuestNPC.QuestHook.LoseScammer, 1);
             }
+            Interactor.Inventory.AddItem(coin);
             timeSinceInteract = 0.0f;
             Interactor.InterruptInteraction();
         }

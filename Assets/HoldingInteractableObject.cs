@@ -4,7 +4,7 @@ public class HoldingInteractableObject : InteractableObject
 {
     [SerializeField] private ProgressIndicator indicator;
     private ProgressIndicator _indicator;
-    public override string InteractString => "Interact";
+    public override string InteractString => "Взаимодействовать";
     private bool interactStart;
     protected float InteractValue;
     [SerializeField] protected float MaxInteractTime;

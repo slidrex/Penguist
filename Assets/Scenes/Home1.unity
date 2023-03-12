@@ -250,6 +250,63 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.64, y: 0.32690305}
   m_EdgeRadius: 0
+--- !u!1001 &123860120
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 9191109465282134781, guid: 20ed5dae93a273641b8b6e6d1cec045d, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191109465282134781, guid: 20ed5dae93a273641b8b6e6d1cec045d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191109465282134781, guid: 20ed5dae93a273641b8b6e6d1cec045d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191109465282134781, guid: 20ed5dae93a273641b8b6e6d1cec045d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191109465282134781, guid: 20ed5dae93a273641b8b6e6d1cec045d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191109465282134781, guid: 20ed5dae93a273641b8b6e6d1cec045d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191109465282134781, guid: 20ed5dae93a273641b8b6e6d1cec045d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191109465282134781, guid: 20ed5dae93a273641b8b6e6d1cec045d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191109465282134781, guid: 20ed5dae93a273641b8b6e6d1cec045d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191109465282134781, guid: 20ed5dae93a273641b8b6e6d1cec045d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191109465282134781, guid: 20ed5dae93a273641b8b6e6d1cec045d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9191109465282134782, guid: 20ed5dae93a273641b8b6e6d1cec045d, type: 3}
+      propertyPath: m_Name
+      value: CamerAs1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 20ed5dae93a273641b8b6e6d1cec045d, type: 3}
 --- !u!1 &171321646
 GameObject:
   m_ObjectHideFlags: 0
@@ -377,6 +434,7 @@ GameObject:
   m_Component:
   - component: {fileID: 259869302}
   - component: {fileID: 259869303}
+  - component: {fileID: 259869304}
   m_Layer: 0
   m_Name: floor
   m_TagString: Untagged
@@ -449,6 +507,44 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!60 &259869304
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 259869301}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.28, y: 1.28}
+    newSize: {x: 1.28, y: 1.28}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: -0.54999995, y: -0.32411674}
+      - {x: -0.5499999, y: -0.3241167}
+      - {x: -0.55, y: 0.55}
+      - {x: 0.53431386, y: 0.55}
+      - {x: 0.53242284, y: 0.64}
+      - {x: -0.63, y: 0.64}
+      - {x: -0.63, y: -0.64}
+      - {x: 0.64, y: -0.64}
+      - {x: 0.64, y: -0.64}
+      - {x: 0.64, y: 0.64}
+      - {x: 0.55, y: 0.64}
+      - {x: 0.55, y: -0.59999996}
+      - {x: -0.55, y: -0.6}
 --- !u!1 &368159378
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,6 +637,7 @@ GameObject:
   m_Component:
   - component: {fileID: 450637176}
   - component: {fileID: 450637177}
+  - component: {fileID: 450637178}
   m_Layer: 0
   m_Name: table
   m_TagString: Untagged
@@ -615,6 +712,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &450637178
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450637175}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.04944843, y: 0.0042855814}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.42, y: 0.61}
+    newSize: {x: 0.42, y: 0.61}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.3211031, y: 0.42536676}
+  m_EdgeRadius: 0
 --- !u!1 &914380943
 GameObject:
   m_ObjectHideFlags: 0
@@ -850,7 +973,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1556528280
 GameObject:
@@ -988,7 +1111,7 @@ Transform:
   - {fileID: 4044466}
   - {fileID: 450637176}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1661144905
 PrefabInstance:
@@ -1020,6 +1143,10 @@ PrefabInstance:
     - target: {fileID: 2385655640830780928, guid: f9385e3e81c652140a0d0ef2be456bb3, type: 3}
       propertyPath: m_IsTrigger
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2704521930288369884, guid: f9385e3e81c652140a0d0ef2be456bb3, type: 3}
+      propertyPath: MaxInteractTime
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 6003957453565273268, guid: f9385e3e81c652140a0d0ef2be456bb3, type: 3}
       propertyPath: m_RootOrder

@@ -7,10 +7,15 @@ public class CollectableItem : InteractableObject
     private float timeSinceBlock;
     private Item Item;
     private BlockTimer blockTimer;
-    [SerializeField] private Item itemDatabase;
-    public override string InteractString => "Collect";
+    [SerializeField] private ItemDatabase itemDatabase;
+    public override string InteractString => "Подобрать";
     protected override void Awake()
     {
+        if(Item == null) 
+        {
+            Item = itemDatabase.GetItem();
+            Renderer.sprite = Item.Sprite;
+        }
         base.Awake();
         Collider = GetComponent<Collider2D>();
         Rigidbody = GetComponent<Rigidbody2D>();

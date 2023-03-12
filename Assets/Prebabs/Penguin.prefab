@@ -233,6 +233,7 @@ GameObject:
   - component: {fileID: 8010190918770207088}
   - component: {fileID: 6740190763837070993}
   - component: {fileID: 1924978944928359373}
+  - component: {fileID: 26144459070007839}
   m_Layer: 0
   m_Name: Penguin
   m_TagString: Untagged
@@ -417,6 +418,7 @@ MonoBehaviour:
   ClueHint: {fileID: 1088143178}
   interactDistance: 0.6
   hint: {fileID: 0}
+  interact: {fileID: 0}
   Inventory: {fileID: 0}
   entity: {fileID: 6740190763837070993}
 --- !u!114 &6740190763837070993
@@ -431,8 +433,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a98a752acd38b234e948994be30d138d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  coin: {fileID: 11400000, guid: 10dd5654cedde7c46b6edfd7834e8934, type: 2}
+  revolver: {fileID: 11400000, guid: 0406919c3f644104b9de89ea68765e95, type: 2}
   <FollowCanvas>k__BackingField: {fileID: 4839568456548786539}
   <Hint>k__BackingField: {fileID: 1088143178}
+  <UI>k__BackingField: {fileID: 0}
 --- !u!114 &1924978944928359373
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -445,10 +450,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47146fd23041d5449b61e6b9a2a401b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  KilledBear: 0
-  ScammerWins: 0
-  ScammerLoses: 0
-  UnfrozenObjectCount: 0
+--- !u!114 &26144459070007839
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8010190918770207096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efad45617c0f47e4b9bc3dc2f3185dc4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &924443380090476942
 PrefabInstance:
   m_ObjectHideFlags: 0

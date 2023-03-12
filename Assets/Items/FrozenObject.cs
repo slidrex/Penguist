@@ -33,6 +33,7 @@ public class FrozenObject : InteractableObject
     public override void OnUnfreeze()
     {
         base.OnUnfreeze();
+        FindObjectOfType<EntityStatistics>().AddStat(QuestNPC.QuestHook.UnfreezeObjects, 1);
         var unfrozen = Instantiate(insideObject, transform.position, Quaternion.identity);
         unfrozen.OnUnfreeze();
     }

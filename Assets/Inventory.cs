@@ -5,12 +5,14 @@ public class Inventory : MonoBehaviour
 {
     [SerializeField] public Item[] Items;
     [SerializeField] private Entity holder;
+    [SerializeField] private InventoryItemName nameDisplayer;
     private Collider2D Collider;
     private InventorySlot[] slots;
     public System.Action OnInventoryChanged;
     [SerializeField] private CollectableItem collectableItem;
     private int selectedSlot;
-    private void Awake()
+    private Item previousFrameSelectedItem;
+    private void Start()
     {
         InitSlots();
         Collider = holder.GetComponent<Collider2D>();
@@ -59,6 +61,7 @@ public class Inventory : MonoBehaviour
     }
     private void Update()
     {
+        Item curItem = Items[selectedSlot];
         Vector2 mouseScrollDelta = Input.mouseScrollDelta;
         if(mouseScrollDelta != Vector2.zero)
         {
@@ -72,6 +75,11 @@ public class Inventory : MonoBehaviour
         {
             Items[selectedSlot].OnItemSecondaryUse(holder);
         }
+        if(previousFrameSelectedItem != curItem && Items[selectedSlot] != null)
+        {
+            nameDisplayer.EnableName(Items[selectedSlot].Name);
+        }
+        previousFrameSelectedItem = curItem;
     }
     public bool ContainsItem(string name)
     {
@@ -89,6 +97,15 @@ public class Inventory : MonoBehaviour
             if(curItem?.Name == item.Name) return true;
         }
         return false;
+    }
+    public int ItemCount(Item item)
+    {
+        int count = 0;
+        foreach(Item curItem in Items)
+        {
+            if(curItem?.Name == item.Name) count++;
+        }
+        return count;
     }
     private void InitSlots()
     {

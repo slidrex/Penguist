@@ -9,11 +9,13 @@ public class Player : Entity, ICanvasHolder, IHintHolder, IQuestUIHolder
     [field:SerializeField] public QuestUI UI { get; set; }
     private Inventory inventory;
     private EntityStatistics statistics;
+    [SerializeField] private ItemDatabase database;
     private void Start()
     {
         statistics = GetComponent<EntityStatistics>();
         inventory = GetComponent<InventoryHolder>().Inventory;
-        inventory.OnInventoryChanged += UpdateStats;
+        if(inventory != null)
+            inventory.OnInventoryChanged += UpdateStats;
     }
     private void UpdateStats()
     {

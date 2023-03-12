@@ -7,19 +7,23 @@ public class PotionTable : InteractableObject
     public override string InteractString => "Сделать зелье";
     public override bool IsInteractable(Interactor potentialInteractor)
     {
-        return potentialInteractor.Inventory.ContainsItem(potionMaterial) && potentialInteractor.Inventory.ContainsItem(outputItem) == false;
+        return potentialInteractor.Inventory.ContainsItem(potionMaterial);
     }
     public override void OnInteractorInRange(Interactor interactor)
     {
         if(IsInteractable(interactor) == false)
         {
             if(interactor.Inventory.ContainsItem(potionMaterial) == false) (interactor.entity as IHintHolder).Hint.CreateHint("Недостаточно снега!");
-            else (interactor.entity as IHintHolder).Hint.CreateHint("У вас уже есть жидкость!");
         }
     }
     public override void OnInteractKeyDown()
     {
+        if(IsInteractable(Interactor) == false)
+        {
+            return;
+        }
         Interactor.Inventory.Remove(potionMaterial);
         Interactor.Inventory.AddItem(outputItem);
+        if(IsInteractable(Interactor) == false) Interactor.InterruptInteraction();
     }
 }

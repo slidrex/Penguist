@@ -4,16 +4,20 @@ using UnityEngine.UI;
 public class QuestUI : MonoBehaviour
 {
     [SerializeField] private UnityEngine.UI.Text questText;
+    [SerializeField] private Text itemName;
     [SerializeField] private Image itemImage;
     private System.Action OnQuestSuccess;
     [SerializeField] private GameObject completeButton;
     private bool questCompleted;
-    public void CreateUI(Sprite image, System.Action onQuestSuccess)
+    private bool completed;
+    public void CreateUI(Sprite image, string itemName, System.Action onQuestSuccess)
     {
+        this.itemName.text = itemName;
         gameObject.SetActive(true);
         questText.text = "";
         completeButton.SetActive(false);
         questCompleted = true;
+        completed = false;
         itemImage.sprite = image;
         OnQuestSuccess += onQuestSuccess;
     }
@@ -38,6 +42,10 @@ public class QuestUI : MonoBehaviour
     }
     public void CompleteQuest()
     {
-        OnQuestSuccess.Invoke();
+        if(completed == false)
+        {
+            OnQuestSuccess.Invoke();
+            completed = true;
+        }
     }
 }

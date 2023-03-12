@@ -14,6 +14,7 @@ public class Bear : UnfrozenObject
 
     private void Start()
     {
+        target = FindObjectOfType<Player>().transform;
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         InvokeRepeating("UpdatePath", 0f, 0.5f);

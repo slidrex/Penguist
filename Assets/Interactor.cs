@@ -7,7 +7,7 @@ public class Interactor : MonoBehaviour
     private List<InteractableObject> objects = new List<InteractableObject>();
     [SerializeField] private float interactDistance;
     [SerializeField] private InteractHint hint;
-    private InteractableObject interact;
+    [HideInInspector] public InteractableObject interact;
     [HideInInspector] public Inventory Inventory;
     private bool interactKeyPressedDown;
     public Entity entity;
@@ -22,6 +22,7 @@ public class Interactor : MonoBehaviour
         HandleNewInteractableObjects();
         
         if(interact != null) InteractInput();
+        
         HandleHint();
     }
     private void HandleNewInteractableObjects()
@@ -92,7 +93,7 @@ public class Interactor : MonoBehaviour
         hint.gameObject.SetActive(render);
         if(render)
         {
-            hint.HintText.text = interact.InteractString + " (E)";
+            hint.HintText.text = interact.InteractString + " [E]";
 
         }
     }
@@ -117,6 +118,7 @@ public class Interactor : MonoBehaviour
     {
         objects.Remove(interact);
         interact.InteractEnd();
+        interact.Interactor = null;
         interact = null;
     }
     private void HandleHint()

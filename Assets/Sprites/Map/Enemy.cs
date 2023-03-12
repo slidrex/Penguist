@@ -75,6 +75,7 @@ public class Enemy : UnfrozenObject
         GameObject obj = Instantiate(dieEffect, transform.position, Quaternion.identity);
         gameObject.SetActive(false);
         Destroy(obj, 2);
+        FindObjectOfType<EntityStatistics>().AddStat(QuestNPC.QuestHook.KillBear, 1);
         Destroy(gameObject, 2);
     }
     private void OnDrawGizmos()

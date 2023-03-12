@@ -17,7 +17,6 @@ public class EntityStatistics : MonoBehaviour
     {
         if(hooks.ContainsKey(hook) == false) hooks.Add(hook, count);
         else hooks[hook] += count;
-        print(count);
     }
     public int GetHookCount(QuestNPC.QuestHook hook)
     {

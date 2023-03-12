@@ -8,7 +8,8 @@ public class QuestNPC : InteractableObject
         UnfreezeObjects,
         GetRevolver,
         ReceivedCoins,
-        LoseScammer
+        LoseScammer,
+        WinScammer
     }
     [System.Serializable]
     public struct QuestQueue
@@ -52,15 +53,13 @@ public class QuestNPC : InteractableObject
         else
         {
             EndTrading();
-            
+            questUI.DestroyUI();
         }
     }
     private void EndTrading()
     {
         Interactor.entity.RemoveRule(Entity.Rule.DisableMovement);
         Interactor.entity.RemoveRule(Entity.Rule.DisableInteraction);
-        Interactor.InterruptInteraction();
-        questUI.DestroyUI();
         activated = false;
     }
     private void OpenCurrentUI()
@@ -68,7 +67,7 @@ public class QuestNPC : InteractableObject
         
         stat = Interactor.GetComponent<EntityStatistics>();
         questUI = (Interactor.entity as IQuestUIHolder).UI;
-        questUI.CreateUI(quests[currentQuest].RewardItem.Sprite, OnQuestSuccess);
+        questUI.CreateUI(quests[currentQuest].RewardItem.Sprite, quests[currentQuest].RewardItem.Name, OnQuestSuccess);
         Quest[] _quests = quests[currentQuest].Quests;
         foreach(Quest quest in _quests)
         {
@@ -77,14 +76,22 @@ public class QuestNPC : InteractableObject
         }
         questUI.EndGenerateUI();
     }
-    protected virtual void OnQuestSuccess()
+    protected void OnQuestSuccess()
     {
+        if(blockedNPC) return;
+        Interactor.Inventory.AddItem(quests[currentQuest].RewardItem);
         EndTrading();
 
         if(currentQuest < quests.Length - 1) 
         {
+            print("next quest");
             currentQuest++;
         }
-        else blockedNPC = true;
+        else 
+        {
+            print("interrupt");
+            blockedNPC = true;
+            Interactor.InterruptInteraction();
+        }
     }
 }
