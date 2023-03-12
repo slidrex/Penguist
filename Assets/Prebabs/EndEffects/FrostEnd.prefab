@@ -12,6 +12,26 @@ PrefabInstance:
       value: FrostEnd
       objectReference: {fileID: 0}
     - target: {fileID: 4547273465965580473, guid: 903ec76b95b59b0449af1d8f1b3454ce, type: 3}
+      propertyPath: InitialModule.rotation3D
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547273465965580473, guid: 903ec76b95b59b0449af1d8f1b3454ce, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547273465965580473, guid: 903ec76b95b59b0449af1d8f1b3454ce, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547273465965580473, guid: 903ec76b95b59b0449af1d8f1b3454ce, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547273465965580473, guid: 903ec76b95b59b0449af1d8f1b3454ce, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 4547273465965580473, guid: 903ec76b95b59b0449af1d8f1b3454ce, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.ctime1
       value: 15420
       objectReference: {fileID: 0}
