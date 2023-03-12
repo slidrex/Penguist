@@ -72,7 +72,7 @@ public class Interactor : MonoBehaviour
     }
     private void AssignInteractObject()
     {
-        if(interact == null && objects.Count > 0)
+        if(interact == null && objects.Count > 0 && entity.ContainsRule(Entity.Rule.DisableInteraction) == false)
         {
             for(int i = 0; i < objects.Count; i++)
             {
@@ -98,7 +98,7 @@ public class Interactor : MonoBehaviour
     }
     private void InteractInput()
     {
-        if(entity.ContainsRule(Entity.Rule.DisableInteraction) == false && Input.GetKeyDown(KeyCode.E))
+        if(Input.GetKeyDown(KeyCode.E))
         {
             interactKeyPressedDown = true;
             float facing = interact.transform.position.x - transform.position.x;

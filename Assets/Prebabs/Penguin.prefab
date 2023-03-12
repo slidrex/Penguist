@@ -232,6 +232,7 @@ GameObject:
   - component: {fileID: 8010190918770207102}
   - component: {fileID: 8010190918770207088}
   - component: {fileID: 6740190763837070993}
+  - component: {fileID: 1924978944928359373}
   m_Layer: 0
   m_Name: Penguin
   m_TagString: Untagged
@@ -432,6 +433,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <FollowCanvas>k__BackingField: {fileID: 4839568456548786539}
   <Hint>k__BackingField: {fileID: 1088143178}
+--- !u!114 &1924978944928359373
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8010190918770207096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47146fd23041d5449b61e6b9a2a401b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  KilledBear: 0
+  ScammerWins: 0
+  ScammerLoses: 0
+  UnfrozenObjectCount: 0
 --- !u!1001 &924443380090476942
 PrefabInstance:
   m_ObjectHideFlags: 0

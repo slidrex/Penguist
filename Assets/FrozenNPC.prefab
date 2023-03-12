@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a2abc225f5bf1e4f879dad31c5fe026, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Renderer: {fileID: 0}
   Collider: {fileID: 0}
   Interactor: {fileID: 0}
   partialFreezeColor:
@@ -133,6 +134,7 @@ MonoBehaviour:
     rgba: 4294967295
   freezedObject: {fileID: 5342749546242947961}
   unfreezeParticles: {fileID: 0}
+  antiFreeze: {fileID: 11400000, guid: 5d27d02639c162246aa410442aefc3a5, type: 2}
 --- !u!1 &1495504320927479053
 GameObject:
   m_ObjectHideFlags: 0

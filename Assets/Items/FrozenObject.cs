@@ -8,7 +8,7 @@ public class FrozenObject : InteractableObject
     private SpriteRenderer iceRenderer;
     public override string InteractString => "Разморозить";
     [SerializeField] private GameObject unfreezeParticles;
-    private const string antiFreezeName = "Антифриз";
+    [SerializeField] private Item antiFreeze;
     protected virtual bool AutoRemove  { get; } = true;
     private UnfrozenObject insideObject;
     public void RenderFrozenObject(Sprite frozenObjectSprite, UnfrozenObject insideObject, bool partialPacked)
@@ -21,17 +21,18 @@ public class FrozenObject : InteractableObject
     }
     public override bool IsInteractable(Interactor interactor)
     {
-        return interactor.Inventory.ContainsItem(antiFreezeName);
+        return interactor.Inventory.ContainsItem(antiFreeze);
     }
     public override void OnInteractKeyDown()
     {
-        Interactor.Inventory.Remove(antiFreezeName);
+        Interactor.Inventory.Remove(antiFreeze);
         OnUnfreeze();
         if(unfreezeParticles != null) Destroy(Instantiate(unfreezeParticles.gameObject, transform.position, Quaternion.identity), 5.0f);
         if(AutoRemove) RemoveFrozenObject();
     }
-    protected virtual void OnUnfreeze()
+    public override void OnUnfreeze()
     {
+        base.OnUnfreeze();
         var unfrozen = Instantiate(insideObject, transform.position, Quaternion.identity);
         unfrozen.OnUnfreeze();
     }

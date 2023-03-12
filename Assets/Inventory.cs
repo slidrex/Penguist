@@ -3,11 +3,11 @@ using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    [SerializeField] private Item[] Items;
+    [SerializeField] public Item[] Items;
     [SerializeField] private Entity holder;
     private Collider2D Collider;
     private InventorySlot[] slots;
-    private System.Action OnInventoryChanged;
+    public System.Action OnInventoryChanged;
     [SerializeField] private CollectableItem collectableItem;
     private int selectedSlot;
     private void Awake()
@@ -49,18 +49,6 @@ public class Inventory : MonoBehaviour
             if(item == null) return false;
         }
         return true;
-    }
-    public void Remove(string name)
-    {
-        for(int i = 0; i < Items.Length; i++)
-        {
-            if(Items[i].Name == name)
-            {
-                Items[i] = null;
-                OnInventoryChanged?.Invoke();
-                return;
-            }
-        }
     }
     private void SelectIndex(int index)
     {
@@ -113,17 +101,28 @@ public class Inventory : MonoBehaviour
     }
     public bool AddItem(Item item)
     {
+        bool isFull = true;
         for(int i = 0; i < Items.Length; i++)
         {
             if(Items[i] == null) 
             {
-                Items[i] = Instantiate(item);
-                Items[i].OnAttach(holder);
-                OnInventoryChanged.Invoke();
+                Instantiatetem(i, item);
+                isFull = false;
                 return true;
             }
         }
+        if(isFull) 
+        {
+            DropItem(selectedSlot);
+            Instantiatetem(selectedSlot, item);
+        }
         return false;
+    }
+    private void Instantiatetem(int index, Item item)
+    {
+        Items[index] = Instantiate(item);
+        Items[index].OnAttach(holder);
+        OnInventoryChanged.Invoke();
     }
     public void DropItem(int index)
     {
