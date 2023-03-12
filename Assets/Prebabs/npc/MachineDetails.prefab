@@ -137,7 +137,7 @@ MonoBehaviour:
       Count: 2
     - Hook: 4
       QuestDescription: "\u041F\u0440\u043E\u0438\u0433\u0440\u0430\u0442\u044C \u043E\u0431\u043C\u0430\u043D\u0449\u0438\u043A\u0443"
-      Count: 2
+      Count: 1
   - RewardItem: {fileID: 11400000, guid: 5f4713b3582d0ec42a18642069fb8e8f, type: 2}
     Quests:
     - Hook: 1

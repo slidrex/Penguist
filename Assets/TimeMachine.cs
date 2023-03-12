@@ -13,7 +13,7 @@ public class TimeMachine : HoldingInteractableObject
     public override void OnInteractorInRange(Interactor interactor)
     {
         if(IsInteractable(interactor) == false)
-            (interactor.entity as IHintHolder).Hint.CreateHint("Недостаточно ресурсов! Запуск невозможен!");
+            (interactor.entity as IHintHolder).Hint.CreateHint("Недостаточно ресурсов (кнопка, батарея, пульсатор)! Запуск невозможен!");
     }
     protected override void OnInteractSuccess()
     {

@@ -281,6 +281,14 @@ PrefabInstance:
       propertyPath: m_SizeDelta.y
       value: 38.420837
       objectReference: {fileID: 0}
+    - target: {fileID: 6859495700207761794, guid: 20ed5dae93a273641b8b6e6d1cec045d, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6859495700207761794, guid: 20ed5dae93a273641b8b6e6d1cec045d, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: c296a37a54f9bc744ab284b595c2641f, type: 3}
     - target: {fileID: 7119350536083523983, guid: 20ed5dae93a273641b8b6e6d1cec045d, type: 3}
       propertyPath: m_FontData.m_Font
       value: 
@@ -1166,7 +1174,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1470839637
 PrefabInstance:
@@ -1189,7 +1197,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5992657641585097807, guid: 8df5fc81568264e4baad1ca3c615289b, type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 5992657641585097807, guid: 8df5fc81568264e4baad1ca3c615289b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1369,7 +1377,7 @@ Transform:
   - {fileID: 4044466}
   - {fileID: 450637176}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1661144905
 PrefabInstance:
@@ -1408,7 +1416,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6003957453565273268, guid: f9385e3e81c652140a0d0ef2be456bb3, type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6003957453565273268, guid: f9385e3e81c652140a0d0ef2be456bb3, type: 3}
       propertyPath: m_LocalPosition.x

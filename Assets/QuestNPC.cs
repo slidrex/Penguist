@@ -78,7 +78,7 @@ public class QuestNPC : InteractableObject
     }
     protected void OnQuestSuccess()
     {
-        if(blockedNPC) return;
+        if(blockedNPC || Interactor == null) return;
         Interactor.Inventory.AddItem(quests[currentQuest].RewardItem);
         EndTrading();
 
