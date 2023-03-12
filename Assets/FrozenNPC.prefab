@@ -134,7 +134,7 @@ MonoBehaviour:
     serializedVersion: 2
     rgba: 4294967295
   freezedObject: {fileID: 5342749546242947961}
-  unfreezeParticles: {fileID: 0}
+  unfreezeParticles: {fileID: 3959547695676574579, guid: 2e18f6fce761fea43a2ac9a994b3b957, type: 3}
   antiFreeze: {fileID: 11400000, guid: 5d27d02639c162246aa410442aefc3a5, type: 2}
 --- !u!1 &1495504320927479053
 GameObject:

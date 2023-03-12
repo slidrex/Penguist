@@ -15,4 +15,9 @@ public class ItemDatabase : ScriptableObject
         offset++;
         return item;
     }
+    public Item GetItem(int i)
+    {
+        Item it = Items[i];
+        return it;
+    }
 }
