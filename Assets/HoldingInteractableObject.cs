@@ -33,7 +33,7 @@ public class HoldingInteractableObject : InteractableObject
         {
             Destroy(_indicator);
             OnInteractSuccess();
-            Interactor.InterruptInteraction();
+            Interactor?.InterruptInteraction();
         }
         else
             InteractValue += Time.deltaTime;

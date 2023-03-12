@@ -7,10 +7,12 @@ public class Scammer : InteractableObject
     public override string InteractString => "Взаимодействовать";
     private bool requested;
     private float interactInterval = 1.0f;
+    private float additionalChance;
     private float timeSinceInteract;
     protected override void Awake()
     {
         base.Awake();
+        additionalChance = 0.0f;
         timeSinceInteract = interactInterval;
     }
     public override void OnInteractKeyDown()
@@ -27,18 +29,20 @@ public class Scammer : InteractableObject
         }
         else 
         {
-            if(Random.Range(0, 1f) <= 0.5f)
+            if(Random.Range(0, 1f) <= 0.5f + additionalChance)
             {
                 (Interactor.entity as IHintHolder).Hint.CreateHint("Повезло повезло!");
+                if(additionalChance > 0) additionalChance -= 0.15f;;
                 Interactor.GetComponent<EntityStatistics>().AddStat(QuestNPC.QuestHook.WinScammer, 1);
+                Interactor.Inventory.AddItem(coin);
             }
             else 
             {
                 (Interactor.entity as IHintHolder).Hint.CreateHint("Не повезло! Не повезло!");
                 Enemy brd = Instantiate(bird, (Vector2)Interactor.entity.transform.position + 5 * RandVector(), Quaternion.identity);
+                additionalChance += 0.15f;
                 Interactor.GetComponent<EntityStatistics>().AddStat(QuestNPC.QuestHook.LoseScammer, 1);
             }
-            Interactor.Inventory.AddItem(coin);
             timeSinceInteract = 0.0f;
             Interactor.InterruptInteraction();
         }

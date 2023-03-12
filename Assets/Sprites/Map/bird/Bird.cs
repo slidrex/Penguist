@@ -31,13 +31,18 @@ public class Bird : UnfrozenObject
                 transform.eulerAngles = new Vector2(0, 180);
         }
     }
-    private void OnTriggerStay2D(Collider2D collider)
+    private void OnCollisionEnter2D(Collision2D collider)
     {
-        if(blockMovement == false && collider.GetComponent<PlayerController>() != null)
+        if(collider.gameObject.GetComponent<PlayerController>() != null)
         {
-            int die;
+            Player player = FindObjectOfType<Player>();
+            player.AddRule(Entity.Rule.DisableMovement);
+            player.AddRule(Entity.Rule.DisableInteraction);
+            GameObject a = Instantiate(player.LoseImage, transform.position, Quaternion.identity, FindObjectOfType<Canvas>().transform);
+            a.transform.localPosition = new Vector3(0, 0, 0);
+            Destroy(gameObject);
         }
-    }   
+    }    
     public override void OnDamage()
     {
         GameObject obj = Instantiate(dieEffect, transform.position, Quaternion.identity, transform);

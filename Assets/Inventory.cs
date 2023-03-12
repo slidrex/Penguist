@@ -80,6 +80,11 @@ public class Inventory : MonoBehaviour
             nameDisplayer.EnableName(Items[selectedSlot].Name);
         }
         previousFrameSelectedItem = curItem;
+        if(Input.GetKeyDown(KeyCode.Alpha1)) SelectIndex(0);
+        if(Input.GetKeyDown(KeyCode.Alpha2)) SelectIndex(1);
+        if(Input.GetKeyDown(KeyCode.Alpha3)) SelectIndex(2);
+        if(Input.GetKeyDown(KeyCode.Alpha4)) SelectIndex(3);
+        if(Input.GetKeyDown(KeyCode.Alpha5)) SelectIndex(4);
     }
     public bool ContainsItem(string name)
     {
@@ -118,22 +123,17 @@ public class Inventory : MonoBehaviour
     }
     public bool AddItem(Item item)
     {
-        bool isFull = true;
         for(int i = 0; i < Items.Length; i++)
         {
             if(Items[i] == null) 
             {
                 Instantiatetem(i, item);
-                isFull = false;
                 return true;
             }
         }
-        if(isFull) 
-        {
-            DropItem(selectedSlot);
-            Instantiatetem(selectedSlot, item);
-        }
-        return false;
+        DropItem(selectedSlot);
+        Instantiatetem(selectedSlot, item);
+        return true;
     }
     private void Instantiatetem(int index, Item item)
     {

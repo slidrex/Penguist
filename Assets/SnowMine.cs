@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class SnowMine : HoldingInteractableObject
 {
+    [SerializeField] private AudioSource collectSound;
     [SerializeField] private Item snow;
     [SerializeField] private int MaxInteractCount;
     private int currentInteractCount;
@@ -14,7 +15,7 @@ public class SnowMine : HoldingInteractableObject
     protected override void OnInteractSuccess()
     {
         Interactor.Inventory.AddItem(snow);
-
+        collectSound.Play();
         if(MaxInteractCount > 0)
         {
             if(currentInteractCount < MaxInteractCount)

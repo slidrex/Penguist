@@ -11,16 +11,25 @@ public class Enemy : UnfrozenObject
     private int currentWaypoint = 0;
     private Seeker seeker;
     private Rigidbody2D rb;
+    private bool blocked;
 
     private void Start()
     {
+        blocked = true;
         target = FindObjectOfType<PlayerController>().transform;
         seeker = GetComponent<Seeker>();
         rb = GetComponent<Rigidbody2D>();
         InvokeRepeating("UpdatePath", 0f, 0.5f);
+        StartCoroutine(Delay());
+    }
+    private System.Collections.IEnumerator Delay()
+    {
+        yield return new WaitForSeconds(2);
+        blocked = false;
     }
     private void FixedUpdate()
     {
+        if(blocked == false)
         Path();
     }
     private void Path()
@@ -64,13 +73,18 @@ public class Enemy : UnfrozenObject
         if(seeker.IsDone())
             seeker.StartPath(transform.position, target.position, OnPathComplete);
     }
-    private void OnTriggerEnter2D(Collider2D collider)
+    private void OnCollisionEnter2D(Collision2D collider)
     {
-        if(collider.GetComponent<PlayerController>() != null)
-        {
-            print("Collision");
-        }
+    if(collider.gameObject.GetComponent<PlayerController>() != null)
+    {
+                Player player = FindObjectOfType<Player>();
+                player.AddRule(Entity.Rule.DisableMovement);
+                player.AddRule(Entity.Rule.DisableInteraction);
+                GameObject a = Instantiate(player.LoseImage, transform.position, Quaternion.identity, FindObjectOfType<Canvas>().transform);
+                a.transform.localPosition = new Vector3(0, 0, 0);
+                Destroy(gameObject);
     }
+    } 
     public override void OnDamage()
     {
         GameObject obj = Instantiate(dieEffect, transform.position, Quaternion.identity);

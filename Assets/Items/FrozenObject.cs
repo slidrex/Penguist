@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class FrozenObject : InteractableObject
 {
+    [SerializeField] private FlexibleAudioSource source;
     [SerializeField] private Color32 partialFreezeColor = Color.white;
     [SerializeField] private Color32 fullFreezeColor = Color.white;
     [SerializeField] private SpriteRenderer freezedObject;
@@ -33,6 +34,8 @@ public class FrozenObject : InteractableObject
     public override void OnUnfreeze()
     {
         base.OnUnfreeze();
+        var obj = Instantiate(source, transform.position, Quaternion.identity);
+        obj.Play(2.0f);
         FindObjectOfType<EntityStatistics>().AddStat(QuestNPC.QuestHook.UnfreezeObjects, 1);
         var unfrozen = Instantiate(insideObject, transform.position, Quaternion.identity);
         unfrozen.OnUnfreeze();

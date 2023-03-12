@@ -12,12 +12,12 @@ public class CoinTrader : InteractableObject
     public override void OnInteractorInRange(Interactor interactor)
     {
         if(IsInteractable(interactor) == false)
-            (interactor.entity as IHintHolder).Hint.CreateHint("Приходи когда будут деньги! Просто так антифриз не дам!");
+            (interactor.entity as IHintHolder).Hint.CreateHint("Приходи когда будет антифриз! Просто так денег не дам!");
     }
     public override void OnInteractKeyDown()
     {
-        Interactor.Inventory.AddItem(potion);
-        Interactor.Inventory.Remove(coin);
+        Interactor.Inventory.AddItem(coin);
+        Interactor.Inventory.Remove(potion);
         (Interactor.entity as IHintHolder).Hint.CreateHint("Спасибо за покупку!");
         Interactor.InterruptInteraction();
     }

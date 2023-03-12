@@ -123,6 +123,50 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &99731013
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 99731015}
+  - component: {fileID: 99731014}
+  m_Layer: 0
+  m_Name: Entry
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &99731014
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99731013}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fac76c85eaaf53343a07963ed3060df0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  snowStepClip: {fileID: 8300000, guid: 3f69be5ab9651a64b905a69fd239b2fd, type: 3}
+--- !u!4 &99731015
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 99731013}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.7414207, y: 4.023308, z: -1.3687441}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 18
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &111415040
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,7 +728,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectTemplate: {fileID: 8144822518048936223, guid: 91451b8e33d791047b68f2a3426dddae, type: 3}
-  ObjectCount: 15
+  ObjectCount: 14
   spawnPointsContainer: {fileID: 672604085}
   NeccessaryObjects:
   - Entity: {fileID: 1897142984573652239, guid: 5ab954a6ebfe70043a155b67730b2c7a, type: 3}
@@ -701,8 +745,6 @@ MonoBehaviour:
     PartialPackedIceChance: 0.5
   - Entity: {fileID: 1897142984573652239, guid: 5ab954a6ebfe70043a155b67730b2c7a, type: 3}
     PartialPackedIceChance: 0
-  - Entity: {fileID: 8264740990949223273, guid: 882bf22b1b797b94cb2b727747af911c, type: 3}
-    PartialPackedIceChance: 0.281
   - Entity: {fileID: 3281652661195725781, guid: 54342736315f0d647849e82e16abd09c, type: 3}
     PartialPackedIceChance: 0.5
   - Entity: {fileID: 528523926846529639, guid: 0a2509f9df877be4db39d5980706b53c, type: 3}
@@ -1391,7 +1433,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3164272529283746912, guid: 8df5fc81568264e4baad1ca3c615289b, type: 3}
       propertyPath: m_Volume
-      value: 0.4
+      value: 0.3
       objectReference: {fileID: 0}
     - target: {fileID: 5992657641585097807, guid: 8df5fc81568264e4baad1ca3c615289b, type: 3}
       propertyPath: m_RootOrder
@@ -1986,6 +2028,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2734585688807453504, guid: 30e5775929210384598e13d3928b5858, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2734585688807453509, guid: 30e5775929210384598e13d3928b5858, type: 3}
       propertyPath: m_Name
       value: home1Outside (1)

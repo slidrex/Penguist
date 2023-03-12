@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class FootSteps : MonoBehaviour
 {
-    [SerializeField] private AudioSource src;
+    [SerializeField] public AudioSource src;
     public void PlayStep() 
     {
         if(src.clip != null)

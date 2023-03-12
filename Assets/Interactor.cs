@@ -8,7 +8,7 @@ public class Interactor : MonoBehaviour
     [SerializeField] private float interactDistance;
     [SerializeField] private InteractHint hint;
     [HideInInspector] public InteractableObject interact;
-    [HideInInspector] public Inventory Inventory;
+    public Inventory Inventory;
     private bool interactKeyPressedDown;
     public Entity entity;
     private Movement movement;

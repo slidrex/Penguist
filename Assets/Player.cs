@@ -9,6 +9,7 @@ public class Player : Entity, ICanvasHolder, IHintHolder, IQuestUIHolder
     [field:SerializeField] public QuestUI UI { get; set; }
     private Inventory inventory;
     private EntityStatistics statistics;
+    public GameObject LoseImage;
     [SerializeField] private ItemDatabase database;
     private void Start()
     {

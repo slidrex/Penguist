@@ -126,6 +126,7 @@ MonoBehaviour:
   Renderer: {fileID: 0}
   Collider: {fileID: 0}
   Interactor: {fileID: 0}
+  source: {fileID: 7691231733608151972, guid: 54b6489b079321f41928bb3cf3c276f0, type: 3}
   partialFreezeColor:
     serializedVersion: 2
     rgba: 2147483647
